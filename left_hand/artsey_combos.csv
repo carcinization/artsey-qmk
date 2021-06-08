@@ -53,3 +53,12 @@ REI,NAV,layer_move(_A_BASE)
 SO,BASE,layer_move(_A_CUSTOM)
 SO,CUSTOM,layer_move(_A_BASE)
 AYIO,BASE,tap_code(KC_CAPS)
+ARTSEYIO,"BASE,NUM,SYM,BRAC,NAV,MOU,CUSTOM","	layer_move(_A_BASE);
+	clear_oneshot_mods();
+	clear_keyboard();
+	if (host_keyboard_leds() & (1 << USB_LED_CAPS_LOCK)) 
+	tap_code(KC_CAPS);
+	if (host_keyboard_leds() & (1 << USB_LED_NUM_LOCK)) 
+	tap_code(KC_NUMLOCK);
+	if (host_keyboard_leds() & (1 << USB_LED_SCROLL_LOCK)) 
+	tap_code(KC_SCROLLLOCK)"
